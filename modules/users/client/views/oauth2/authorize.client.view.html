@@ -1,0 +1,30 @@
+﻿<div data-ng-controller="OAuth2Controller">
+	<div ng-show="authentication.user">
+		<div>
+			<h1>ICCNU OAuth2 Authorization</h1>
+			<h3>您好, <strong><span ng-bind="user.username"></span></strong>.</h3>
+
+			<h5>名为 <strong><span ng-bind="client.name"></span></strong>
+				的网站想要使用你在 ICCNU 的账户登录，并使用 ICCNU 上的功能，您是否授权？这不会泄漏你在 ICCNU 上的密码。
+			</h5>
+
+			<h3>关于 <strong><span ng-bind="client.name"></span></strong>.</h3>
+			<h5 ng-bind="client.description"></h5>
+
+			<div>
+				<form action="/api/oauth2/authorize" method="post">
+					<input name="transaction_id" type="hidden" value="{{tid}}">
+					<input name="clientId" type="hidden" value="{{client._id}}">
+
+					<div>
+						<input class="btn btn-success" type="submit" value="进入{{client.name}}" id="allow">
+						<input formaction="/api/oauth2/deny" class="btn btn-waring" type="submit" value="取消" id="deny">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<a href="/api/oauth2/signout?{{search}}" target="_self">更换用户登录</a>
+	<div>{{search}}</div>
+</div>

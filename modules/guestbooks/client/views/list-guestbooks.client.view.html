@@ -1,0 +1,34 @@
+﻿<div class="row" data-ng-controller="guestbooksController" data-ng-init="find()">
+    <div class="page-header hidden-xs">
+        <h1>留言板</h1>
+    </div>
+    <!--<br/>-->
+
+    <div data-ng-repeat="guestbook in guestbooks" class="list-group-item row">
+        <h4 data-ng-bind="guestbook.user.displayName+':'"></h4>
+        <h5 class="list-group-item-text" data-ng-bind="guestbook.content"></h5>
+        <!--<p class="list-group-item-text" data-ng-bind="guestbook.comments"></p>-->
+        <div data-ng-bind="guestbook.created | date: 'yyyy-MM-dd H:mm'" class="col-md-11"></div>
+        <a data-ui-sref="guestbooks.view({guestbookId: guestbook._id})">
+            <!--<input class="col-md-1" type="button" value="更多"/>-->
+            <button class="btn btn-default col-md-1">更多</button>
+        </a>
+    </div>
+
+    <div class="alert alert-warning text-center" data-ng-if="guestbooks.$resolved && !guestbooks.length">
+        No guestbook yet, why don't you post one?
+    </div>
+    <div class="row">
+        <form name="guestbookForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <textarea name="content" data-ng-model="content" id="content" class="form-control" placeholder="请输入留言"></textarea>
+                    <input type="submit" class="btn btn-default" value="提交">
+                </div>
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

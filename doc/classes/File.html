@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>File</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/auth.server.routes.html">auth.server.routes</a></li>
+            
+                <li><a href="../classes/Directory.html">Directory</a></li>
+            
+                <li><a href="../classes/disk.server.routes.html">disk.server.routes</a></li>
+            
+                <li><a href="../classes/File.html">File</a></li>
+            
+                <li><a href="../classes/oauth2.server.routes.html">oauth2.server.routes</a></li>
+            
+                <li><a href="../classes/User.html">User</a></li>
+            
+                <li><a href="../classes/users.server.routes.html">users.server.routes</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/Core.html">Core</a></li>
+            
+                <li><a href="../modules/Disk.html">Disk</a></li>
+            
+                <li><a href="../modules/Users.html">Users</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>File Class</h1>
+<div class="box meta">
+    
+
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/d:_iccnu_mean_stack_modules_disk_server_models_file.server.model.js.html#l3"><code>d:\iccnu_mean_stack\modules\disk\server\models\file.server.model.js:3</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/Disk.html">Disk</a>
+        
+    
+
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>Directory model definition</p>
+
+</div>
+
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+        
+        
+            <li class="api-class-tab attrs"><a href="#attrs">Attributes</a></li>
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+
+            
+
+            
+                <div class="index-section attrs">
+                    <h3>Attributes</h3>
+
+                    <ul class="index-list attrs">
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_contentType">contentType</a>
+                            </li>
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_created">created</a>
+                            </li>
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_eTag">eTag</a>
+                            </li>
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_extension">extension</a>
+                            </li>
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_name">name</a>
+                            </li>
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_parent">parent</a>
+                            </li>
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_size">size</a>
+                            </li>
+                        
+                            <li class="index-item attr">
+                                <a href="#attr_user">user</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+        </div>
+
+        
+
+        
+
+        
+            <div id="attrs" class="api-class-tabpanel">
+                <h2 class="off-left">Attributes</h2>
+
+                
+                    <div id="attr_contentType" class="attr item">
+    <a name="config_contentType"></a> 
+    <h3 class="name"><code>contentType</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag readonly">readonly</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/d:_iccnu_mean_stack_modules_disk_server_models_file.server.model.js.html#l81"><code>d:\iccnu_mean_stack\modules\disk\server\models\file.server.model.js:81</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> this.user</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_created" class="attr item">
+    <a name="config_created"></a> 
+    <h3 class="name"><code>created</code></h3>
+    <span class="type">Date</span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag readonly">readonly</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/d:_iccnu_mean_stack_modules_disk_server_models_file.server.model.js.html#l14"><code>d:\iccnu_mean_stack\modules\disk\server\models\file.server.model.js:14</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> Date.now</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_eTag" class="attr item">
+    <a name="config_eTag"></a> 
+    <h3 class="name"><code>eTag</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag readonly">readonly</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/d:_iccnu_mean_stack_modules_disk_server_models_file.server.model.js.html#l72"><code>d:\iccnu_mean_stack\modules\disk\server\models\file.server.model.js:72</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> this.user</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_extension" class="attr item">
+    <a name="config_extension"></a> 
+    <h3 class="name"><code>extension</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag readonly">readonly</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/d:_iccnu_mean_stack_modules_disk_server_models_file.server.model.js.html#l36"><code>d:\iccnu_mean_stack\modules\disk\server\models\file.server.model.js:36</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_name" class="attr item">
+    <a name="config_name"></a> 
+    <h3 class="name"><code>name</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag required">required</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/d:_iccnu_mean_stack_modules_disk_server_models_file.server.model.js.html#l24"><code>d:\iccnu_mean_stack\modules\disk\server\models\file.server.model.js:24</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_parent" class="attr item">
+    <a name="config_parent"></a> 
+    <h3 class="name"><code>parent</code></h3>
+    <span class="type">ObjectId</span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/d:_iccnu_mean_stack_modules_disk_server_models_file.server.model.js.html#l53"><code>d:\iccnu_mean_stack\modules\disk\server\models\file.server.model.js:53</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> this.user</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_size" class="attr item">
+    <a name="config_size"></a> 
+    <h3 class="name"><code>size</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag readonly">readonly</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/d:_iccnu_mean_stack_modules_disk_server_models_file.server.model.js.html#l62"><code>d:\iccnu_mean_stack\modules\disk\server\models\file.server.model.js:62</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> this.user</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="attr_user" class="attr item">
+    <a name="config_user"></a> 
+    <h3 class="name"><code>user</code></h3>
+    <span class="type">ObjectId</span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag readonly">readonly</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/d:_iccnu_mean_stack_modules_disk_server_models_file.server.model.js.html#l44"><code>d:\iccnu_mean_stack\modules\disk\server\models\file.server.model.js:44</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

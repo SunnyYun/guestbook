@@ -1,0 +1,13 @@
+git clone https://github.com/ccnuyan/iccnu.git
+docker build --tag ubuntu-iccnu-nodejs:1.0 .
+
+
+docker run -p 8001:8080 --name=iccnu-node01 --link=iccnu-db:iccnu-db -d ubuntu-iccnu-nodejs:1.0
+
+
+docker run -p 8002:8080 --name=iccnu-node02 --link=iccnu-db:iccnu-db -d ubuntu-iccnu-nodejs:1.0
+
+
+docker run -p 8003:8080 --name=iccnu-node03 --link=iccnu-db:iccnu-db -d ubuntu-iccnu-nodejs:1.0
+
+
