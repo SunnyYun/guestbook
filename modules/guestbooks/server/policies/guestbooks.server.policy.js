@@ -18,6 +18,9 @@ exports.invokeRolesPolicies = function() {
 			resources: '/api/guestbooks',
 			permissions: '*'
 		}, {
+			resources: '/api/comment',
+			permissions: '*'
+		},{
 			resources: '/api/guestbooks/:guestbookId',
 			permissions: '*'
 		}]
@@ -30,7 +33,7 @@ exports.invokeRolesPolicies = function() {
 			resources: '/api/guestbooks/:guestbookId',
 			permissions: ['get','put']
 		},{
-			resources: '/api/comments',
+			resources: '/api/comment',
 			permissions: '*'
 		}]
 	}, {
@@ -39,6 +42,9 @@ exports.invokeRolesPolicies = function() {
 			resources: '/api/guestbooks',
 			permissions: ['get']
 		}, {
+			resources: '/api/comment',
+			permissions: ['get']
+		},{
 			resources: '/api/guestbooks/:guestbookId',
 			permissions: ['get']
 		}]
