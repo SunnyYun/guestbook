@@ -5,9 +5,9 @@ angular.module('guestbooks').controller('guestbooksController', ['$scope', '$sta
     function ($scope, $state, $stateParams, $location, Authentication, Guestbooks) {
         $scope.authentication = Authentication;
         //$scope.commenttext = {show:false};
-        $scope.togglleMenu = function (guestbook) {
-            guestbook.show = !guestbook.show
-        };
+        //$scope.togglleMenu = function (guestbook) {
+        //    guestbook.show = !guestbook.show
+        //};
 
 
         $scope.create = function () {
@@ -25,35 +25,20 @@ angular.module('guestbooks').controller('guestbooksController', ['$scope', '$sta
             });
         };
 
-        $scope.remove = function (guestbook) {
-            if (guestbook) {
-                guestbook.$remove();
+        $scope.remove = function (guestbookone) {
+            console.log('7777777777777777777');
+
+            if (guestbookone) {
+                console.log('8888888888888888888');
+
+                guestbookone.guestbook.$remove();
+
                 for (var i in $scope.guestbooks) {
                     if ($scope.guestbooks[i] === guestbook) {
                         $scope.guestbooks.splice(i, 1);
                     }
                 }
-            } else {
-                $scope.guestbook.$remove(function () {
-                    $location.path('guestbooks');
-                });
             }
-        };
-
-        $scope.reply = function () {
-            var guestbook = $scope.guestbook;
-            console.log(guestbook);
-            var comment = {
-                content: $scope.content
-            };       //why the var?
-            guestbook.comments = comment;
-            guestbook.$update(function (res) {
-                $scope.content = '';
-                $scope.findOne();
-                //$scope.guestbook = res;
-            }, function (errorResponse) {
-                $scope.error = errorResponse.data.message;
-            });
         };
 
         $scope.find = function () {
@@ -61,9 +46,11 @@ angular.module('guestbooks').controller('guestbooksController', ['$scope', '$sta
         };
 
         $scope.findOne = function () {
-            $scope.guestbook = Guestbooks.get({
+            $scope.guestbookOne = Guestbooks.get({
                 guestbookId: $stateParams.guestbookId
             });
         };
     }
 ]);
+
+

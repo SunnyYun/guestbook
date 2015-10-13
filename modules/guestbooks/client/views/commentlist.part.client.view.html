@@ -1,0 +1,18 @@
+<div data-ng-init="find()">
+
+    <form name="Acomment" id="Acomment" class="form-horizontal" ng-submit="reply()">
+        <div>
+            <textarea ng-model="content" id="content" class="form-control" placeholder="Comment"></textarea>
+            <input class="btn button-default" type="submit" value="确定"/>
+            <!--<button class="btn button-default" ng-click="togglleMenu(guestbook)">取消</button>-->
+        </div>
+    </form>
+
+
+    <div data-ng-repeat="x in comment" class="list-group-item">
+        <h4 data-ng-bind="x.user.displayName+'  '+'回复:'"></h4>
+        <h5 class="list-group-item-text" data-ng-bind="x.content"></h5>
+
+        <div data-ng-bind="x.created | date: 'yyyy-MM-dd H:mm:ss'"></div>
+    </div>
+</div>

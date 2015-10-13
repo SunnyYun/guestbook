@@ -1,4 +1,5 @@
 <section data-ng-controller="guestbooksController" data-ng-init="findOne()">
+
     <!--<div class="pull-right" data-ng-show="authentication.user._id == guestbook.user._id">-->
     <!--<a class="btn btn-primary" data-ui-sref="articles.edit({articleId: article._id})">-->
     <!--<span class="glyphicon glyphicon-edit"></span>-->
@@ -7,54 +8,51 @@
         <small>
             <em>
                 Posted on
-                <span data-ng-bind="guestbook.created | date:'mediumDate'"></span>
+                <span data-ng-bind="guestbookOne.guestbook.created | date:'mediumDate'"></span>
                 by
-                <span data-ng-bind="guestbook.user.displayName"></span>
+                <span data-ng-bind="guestbookOne.guestbook.user.displayName"></span>
             </em>
         </small>
-        <p class="lead" data-ng-bind="guestbook.content"></p>
-        <div class="col-md-offset-11" >
-            <button class="btn btn-default" data-ng-click="togglleMenu(guestbook)">
-                <span class="glyphicon glyphicon-edit"></span>
-            </button>
-            <span data-ng-show="authentication.user._id == guestbook.user._id">
+        <p class="lead" data-ng-bind="guestbookOne.guestbook.content"></p>
+
+        <div class="col-md-offset-11">
+            <!--<button class="btn btn-default" data-ng-click="togglleMenu(guestbook)">-->
+                <!--<span class="glyphicon glyphicon-edit"></span>-->
+            <!--</button>-->
+            <span data-ng-show="authentication.user._id == guestbookOne.guestbook.user._id">
                 <button class="btn btn-default" data-ng-click="remove();">
                     <span class="glyphicon glyphicon-trash"></span>
                 </button>
             </span>
         </div>
-        <!--<button class="btn btn-default" data-ng-click="togglleMenu(guestbook)">-->
-            <!--<span class="glyphicon glyphicon-edit"></span>-->
-        <!--</button>-->
-        <!--<button class="btn btn-default" data-ng-click="remove();">-->
-            <!--<span class="glyphicon glyphicon-trash"></span>-->
-        <!--</button>-->
+    </div>
+
+    <div data-ng-controller="commentsController">
+
         <form name="Acomment" id="Acomment" class="form-horizontal" ng-submit="reply()">
-            <div ng-show="guestbook.show">
+            <div>
                 <textarea ng-model="content" id="content" class="form-control" placeholder="Comment"></textarea>
                 <input class="btn button-default" type="submit" value="确定"/>
-                <button class="btn button-default" ng-click="togglleMenu(guestbook)">取消</button>
+                <!--<button class="btn button-default" ng-click="togglleMenu(guestbook)">取消</button>-->
             </div>
         </form>
-            <span data-ng-repeat="x in guestbook.comments" class="list-group-item">
-                <h4 data-ng-bind="x.user+'  '+'回复:'"></h4>
-                <h5 class="list-group-item-text" data-ng-bind="x.content"></h5>
-                <div data-ng-bind="x.created | date: 'yyyy-MM-dd H:mm:ss'"></div>
-            </span>
     </div>
-</section>
-<!--<button class="btn button-default" ng-click="togglleMenu(guestbook)">回复</button>-->
-<!--<button class="btn button-default" data-ng-click="findOne();">findone</button>-->
-<!--<button class="btn button-default" data-ng-click="remove();">删除</button>-->
 
-<!--<section ng-show="commenttext.show">-->
-<!--<include data-ng-src="edit-comments.client.view.html"></include>-->
-<!--<div class="form-group">-->
-<!--<textarea name="comments.content" data-ng-model="comments.content" id="comments.content"-->
-<!--class="form-control" cols="30"-->
-<!--rows="1" placeholder="请输入回复">-->
-<!--</textarea>-->
-<!--<button class="btn button-default" type="submit">确定</button>-->
-<!--<button class="btn button-default" ng-click="togglleMenu()">取消</button>-->
-<!--</div>-->
-<!--</section>-->
+        <!--<div data-ng-repeat="x in comment" class="list-group-item">-->
+            <!--<h4 data-ng-bind="x.user.displayName+'  '+'回复:'"></h4>-->
+            <!--<h5 class="list-group-item-text" data-ng-bind="x.content"></h5>-->
+
+            <!--<div data-ng-bind="x.created | date: 'yyyy-MM-dd H:mm:ss'"></div>-->
+        <!--</div>-->
+
+    <div data-ng-repeat="x in guestbookOne.comments" class="list-group-item">
+        <h4 data-ng-bind="x.user.displayName+'  '+'回复:'"></h4>
+        <h5 class="list-group-item-text" data-ng-bind="x.content"></h5>
+
+        <div data-ng-bind="x.created | date: 'yyyy-MM-dd H:mm:ss'"></div>
+    </div>
+
+
+
+</section>
+

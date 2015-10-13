@@ -5,8 +5,8 @@
  * Module dependencies.
  */
 var guestbooksPolicy = require('../policies/guestbooks.server.policy'),
-	guestbooks = require('../controllers/guestbooks.server.controller');
-	//comments = require('../controllers/comments.server.controller');
+	guestbooks = require('../controllers/guestbooks.server.controller'),
+	comment= require('../controllers/comments.server.controller');
 
 module.exports = function(app) {
 	// guestbooks collection routes
@@ -15,8 +15,11 @@ module.exports = function(app) {
 		.post(guestbooks.create);
 	app.route('/api/guestbooks/:guestbookId').all(guestbooksPolicy.isAllowed)
 		.get(guestbooks.read)
-		.put(guestbooks.commentCreate)
 		.delete(guestbooks.delete);
+	app.route('/api/comment').all(guestbooksPolicy.isAllowed)
+		.post(comment.create);
+		//.get(comment.list);
 
 	app.param('guestbookId', guestbooks.guestbookByID);
+	app.param('commentId', comment.commentByID);
 };
